@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://hosnian-prime.github.io',
-  base: '/geonosis',
+  base: '/geonosis-web',
   vite: {
     plugins: [tailwindcss()],
   },
