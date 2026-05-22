@@ -70,7 +70,7 @@ try {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-amber-400">
             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
           </svg>
-          <span class="font-mono text-xs">{starCount}</span>
+          <span id="star-count" class="font-mono text-xs">{starCount}</span>
         </a>
 
         <!-- Mobile menu button -->
@@ -143,4 +143,17 @@ try {
   );
 
   sections.forEach((section) => observer.observe(section));
+
+  // Fetch GitHub stars dynamically (build-time value is already shown as fallback)
+  fetch('https://api.github.com/repos/hosnian-prime/geonosis', {
+    headers: { 'Accept': 'application/vnd.github.v3+json' },
+  })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const el = document.getElementById('star-count');
+      if (el && typeof data.stargazers_count === 'number') {
+        el.textContent = data.stargazers_count.toLocaleString();
+      }
+    })
+    .catch(() => {});
 </script>

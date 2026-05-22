@@ -26,6 +26,6 @@
   <text x="80" y="330" font-family="system-ui, sans-serif" font-weight="700" font-size="42" fill="#FF5E1A">Identity's New Planet.</text>
   <text x="80" y="390" font-family="ui-monospace, monospace" font-size="20" fill="#64748B">IAM server written in Rust · OIDC 1.0 + OAuth 2.1</text>
   <!-- Accent line -->
-  <rect x="80" y="210" width="50" height="3" fill="#FF5E1A"/>
-  <text x="140" y="213" font-family="ui-monospace, monospace" font-size="14" fill="#FF5E1A" letter-spacing="3">OPEN SOURCE IAM</text>
+  <rect x="80" y="180" width="50" height="3" fill="#FF5E1A"/>
+  <text x="140" y="183" font-family="ui-monospace, monospace" font-size="14" fill="#FF5E1A" letter-spacing="3">OPEN SOURCE IAM</text>
 </svg>
