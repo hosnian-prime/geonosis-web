@@ -9,8 +9,9 @@ const {
   description = 'Open-source IAM server written in Rust. OIDC 1.0, OAuth 2.1, WASM plugins, graph-based flow engine, and a built-in admin UI. The fast, secure Keycloak alternative.',
 } = Astro.props;
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const ogImage = new URL('/geonosis/og-image.png', Astro.site);
+const ogImage = new URL(`${base}/og-image.png`, Astro.site);
 ---
 
 <!doctype html>
@@ -27,7 +28,7 @@ const ogImage = new URL('/geonosis/og-image.png', Astro.site);
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/geonosis/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
