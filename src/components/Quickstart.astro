@@ -4,9 +4,9 @@ const tabs = [
     id: 'docker',
     label: 'Docker',
     steps: [
-      { prompt: '$ ', cmd: 'docker compose -f deploy/compose/quickstart.yml up -d', comment: '# Start Geonosis + Postgres' },
-      { prompt: '$ ', cmd: 'curl -s http://localhost:8080/realms/acme/.well-known/openid-configuration | jq .issuer', comment: '# Verify discovery endpoint' },
-      { prompt: '', cmd: '"http://localhost:8080/realms/acme"', comment: '' },
+      { prompt: '$ ', cmd: 'make quickstart', comment: '# Start Geonosis + Postgres' },
+      { prompt: '$ ', cmd: 'curl -s http://localhost:8080/realms/master/.well-known/openid-configuration | jq .issuer', comment: '# Verify discovery endpoint' },
+      { prompt: '', cmd: '"http://localhost:8080/realms/master"', comment: '' },
     ],
   },
   {
@@ -52,15 +52,15 @@ const tabs = [
           <div class="space-y-2 text-sm font-mono">
             <div class="flex justify-between">
               <span class="text-text-secondary">admin</span>
-              <span class="text-text">admin@acme.test / admin-pw</span>
+              <span class="text-text">admin@master.test / admin-pw</span>
             </div>
             <div class="flex justify-between">
               <span class="text-text-secondary">user</span>
-              <span class="text-text">ada@acme.test / ada-pw</span>
+              <span class="text-text">ada@master.test / ada-pw</span>
             </div>
             <div class="flex justify-between">
               <span class="text-text-secondary">client</span>
-              <span class="text-accent">acme-web</span>
+              <span class="text-accent">master-web</span>
             </div>
           </div>
         </div>
